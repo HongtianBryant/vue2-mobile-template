@@ -1,7 +1,6 @@
 'use strict'
 const path = require('path')
 const defaultSetting = require('./src/settings.js')
-const SentryWebpackPlugin = require('@sentry/webpack-plugin')
 
 function resolve(dir) {
   return path.join(__dirname, dir)
@@ -11,9 +10,7 @@ const name = defaultSetting.title || '在线考试'
 
 const port = process.env.port || process.env.npm_config_port || 9988
 
-const BASE_URL = process.env.NODE_ENV === 'production'
-  ? '/apps/online-exam/'
-  : '/'
+const BASE_URL = '/'
 
 module.exports = {
   publicPath: BASE_URL,
@@ -26,15 +23,6 @@ module.exports = {
     overlay: {
       warnings: false,
       errors: true
-    },
-    proxy: {
-      '/': {
-        target: 'http://localhost:8084',
-        changeOrigin: true,
-        pathRewrite: {
-          '^/api': ''
-        }
-      }
     }
   },
   configureWebpack: {
@@ -45,17 +33,7 @@ module.exports = {
       alias: {
         '@': resolve('src')
       }
-    },
-    plugins: [
-      new SentryWebpackPlugin({
-        // webpack specific configuration
-        release: process.env.VUE_APP_SENTRY_RELEASE,
-        include: './dist',
-        ignore: ['node_modules'],
-        configFile: '.sentryclirc',
-        urlPrefix: '~/static/'
-      })
-    ]
+    }
   },
   chainWebpack(config) {
     // it can improve the speed of the first screen, it is recommended to turn on preload
