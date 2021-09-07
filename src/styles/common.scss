@@ -1,0 +1,27 @@
+.text-left{
+  text-align: left;
+}
+.text-right{
+  text-align: right;
+}
+.text-center{
+  text-align: center;
+}
+
+.btn-text{
+  text-decoration: none;
+  color: #4381E5;
+  font-size: 14px;
+}
+.border-btn{
+  display: inline-block;
+  font-size: 12px;
+  color: #4381E5;
+  border: 1px solid #4381E5;
+  border-radius: 12px;
+  padding: 3px 8px;
+  &.disabled{
+    color: #ccc;
+    border: 1px solid #ccc;
+  }
+}

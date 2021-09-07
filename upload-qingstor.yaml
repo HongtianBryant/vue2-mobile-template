@@ -1,0 +1,14 @@
+name: online-exam-upload
+type: copy
+
+destination:
+  type: qingstor
+  path: /apps/online-exam
+  options:
+    bucket_name: kcbcdn
+    access_key_id: EIXKSJZYAKCKEMHTOJTK
+    secret_access_key: SkCVd6bsPuif8wIyUrUT2Lm9oIXwM9wLZgD7hYkj
+
+source:
+  type: fs
+  path: /Users/HanHongmin/DinsTech/online-exam/dist
