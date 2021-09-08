@@ -1,4 +1,13 @@
-# online-exam
+# vue2-mobile-template
+
+移动端vue2.0模板项目，模板项目生成后，需要根据实际项目，修改几处文件
+
+- `vue.config.js`中的`port` 端口号，默认`title`
+- `.env.xxx`中的的接口根域名配置
+- `package.json`中的的`name`和`version`
+- `src/settings.js`中的的`title`
+
+
 
 ## Project setup
 ```
@@ -20,11 +29,5 @@ npm run build
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### 
 
-
-### Sentry 安装有问题的话使用以下命令
-```shell script
-SENTRYCLI_CDNURL=https://github.com/getsentry/sentry-cli/releases/download/ npm install @sentry/cli
-```
