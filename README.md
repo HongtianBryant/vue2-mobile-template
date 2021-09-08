@@ -6,6 +6,7 @@
 - `.env.xxx`中的的接口根域名配置
 - `package.json`中的的`name`和`version`
 - `src/settings.js`中的的`title`
+- `src/utils/auth`中`tokenKey`变量名
 
 
 
