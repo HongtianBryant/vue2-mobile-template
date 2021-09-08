@@ -6,7 +6,7 @@ function resolve(dir) {
   return path.join(__dirname, dir)
 }
 
-const name = defaultSetting.title || '在线考试'
+const name = defaultSetting.title || ''
 
 const port = process.env.port || process.env.npm_config_port || 9988
 
@@ -40,8 +40,6 @@ module.exports = {
     config.plugin('preload').tap(() => [
       {
         rel: 'preload',
-        // to ignore runtime.js
-        // https://github.com/vuejs/vue-cli/blob/dev/packages/@vue/cli-service/lib/config/app.js#L171
         fileBlacklist: [/\.map$/, /hot-update\.js$/, /runtime\..*\.js$/],
         include: 'initial'
       }
